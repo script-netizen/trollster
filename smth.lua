@@ -145,7 +145,7 @@ tab.newButton("Prison", "TP", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 
-local tab = DrRayLibrary.newTab("Ethical Apple Farm", "10729455663")
+local tab = DrRayLibrary.newTab("EAF", "10729455663")
 
 tab.newInput("Change Item", "Must be something you can Place!", function(text)
     renameTool(text)
