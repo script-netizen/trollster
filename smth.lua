@@ -71,7 +71,7 @@ function clip()
 end
 
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
-local window = DrRayLibrary:Load("Script Hub", "10590477450")
+local window = DrRayLibrary:Load("Trickster Hub", "10590477450")
 local tab = DrRayLibrary.newTab("Universal", "5205790826")
 tab.newSlider("Speed", "WalkSpeed", 100, false, function(num)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = num
@@ -81,7 +81,7 @@ tab.newSlider("Jump", "JumpPower", 100, false, function(num)
 end)
 
 tab.newSlider("Gravity", "Pretty Explanatory", 192, false, function(num)
-    workspace.gravity = num
+    workspace.Gravity = num
 end)
 
 tab.newToggle("Noclip", "Pretty Explanatory", false, function(toggleState)
