@@ -120,6 +120,10 @@ end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)
 
+tab.newButton("FE Tools", "May not work!!!", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/AZVi2tuK"))()
+end)
+
 local tab = DrRayLibrary.newTab("Prison Life", "9835676498")
 
 tab.newButton("Delete Doors", "Press Once!", function()
