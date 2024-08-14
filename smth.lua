@@ -150,7 +150,7 @@ end)
 local tab = DrRayLibrary.newTab("Others", "10729455663")
 
 tab.newButton("Dex", "Mobile Friendly", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/script-netizen/trollster/main/dex.lua"))()
+    getgenv().Key = "Bash" loadstring(game:HttpGet("https://raw.githubusercontent.com/script-netizen/trollster/main/dex.lua"))()
 end)
 
 tab.newButton("Keyboard", "Mobile Players", function()
