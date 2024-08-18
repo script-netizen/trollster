@@ -1,37 +1,45 @@
 -- no bitches?
 local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
 local userInputService = game:GetService("UserInputService")
 
 local infJumpEnabled = false
 local jumpDebounce = false
 local jumpPower = 50  -- You can adjust the jump power to your liking
 
--- Function to handle infinite jumping
-local function onJumpRequest()
-    if infJumpEnabled and humanoid:GetState() == Enum.HumanoidStateType.Freefall and not jumpDebounce then
-        jumpDebounce = true
-        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-        humanoid:Move(Vector3.new(0, jumpPower, 0), true)
-        wait(0.2)  -- Prevents rapid consecutive jumps
-        jumpDebounce = false
+local function setupCharacter(character)
+    local humanoid = character:WaitForChild("Humanoid")
+
+    -- Function to handle infinite jumping
+    local function onJumpRequest()
+        if infJumpEnabled and humanoid:GetState() == Enum.HumanoidStateType.Freefall and not jumpDebounce then
+            jumpDebounce = true
+            humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+            humanoid:Move(Vector3.new(0, jumpPower, 0), true)
+            wait(0.2)  -- Prevents rapid consecutive jumps
+            jumpDebounce = false
+        end
     end
+
+    -- Connect the jump request to the infinite jump handler
+    userInputService.JumpRequest:Connect(onJumpRequest)
 end
 
--- Function to turn infinite jump on
+-- Set up the character when the script first runs
+if player.Character then
+    setupCharacter(player.Character)
+end
+
+-- Listen for when the character is added (e.g., on respawn)
+player.CharacterAdded:Connect(setupCharacter)
+
+-- Functions to turn infinite jump on and off
 function InfJumpOn()
     infJumpEnabled = true
 end
 
--- Function to turn infinite jump off
 function InfJumpOff()
     infJumpEnabled = false
 end
-
--- Connect the jump request to the infinite jump handler
-userInputService.JumpRequest:Connect(onJumpRequest)
 
 local player = game.Players.LocalPlayer
 local backpack = player:WaitForChild("Backpack")
