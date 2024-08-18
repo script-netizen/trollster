@@ -95,7 +95,7 @@ tab.newToggle("Noclip", "Pretty Explanatory", false, function(toggleState)
     end
 end)
 
-tab.newToggle("Inf Jump", "yessir", true, function(toggleState)
+tab.newToggle("Inf Jump", "yessir", false, function(toggleState)
     if toggleState then
         InfJumpOn()
     else
@@ -152,6 +152,10 @@ tab.newInput("Change Item", "Must be something you can Place!", function(text)
 end)
 
 local tab = DrRayLibrary.newTab("Others", "10729455663")
+
+tab.newButton("F3X", "real?!?!", function()
+    loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+end)
 
 tab.newButton("Dex", "Mobile Friendly", function()
     getgenv().Key = "Bash" loadstring(game:HttpGet("https://raw.githubusercontent.com/script-netizen/trollster/main/dex.lua"))()
