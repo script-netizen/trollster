@@ -177,6 +177,6 @@ tab.newButton("Spy", "Arg arg", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
 end)
 
-tab.newButton("IYR", "stupidity into iy!", function()
+tab.newButton("IY", "rip iyr", function()
     loadstring(game:HttpGet("https://github.com/fuckusfm/infiniteyield-reborn/raw/master/source"))()
 end)
